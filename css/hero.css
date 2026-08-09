@@ -1,0 +1,166 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 100px 0 110px;
+
+    color: var(--white);
+    background: var(--maroon);
+}
+
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.08;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 45%,
+            var(--white) 45%,
+            var(--white) 55%,
+            transparent 55%
+        );
+
+    background-size: 42px 42px;
+
+    pointer-events: none;
+}
+
+.hero-grid {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.hero .eyebrow {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+
+    color: var(--white);
+
+    font-size: clamp(
+        2.5rem,
+        5vw,
+        4.7rem
+    );
+}
+
+.hero h1 span {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-tagline {
+    margin-bottom: 18px;
+
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 1.05rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.hero .btn-primary {
+    background: var(--white);
+    color: var(--maroon);
+}
+
+.hero .btn-outline {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.65);
+}
+
+.hero .btn-outline:hover {
+    color: var(--maroon);
+    background: var(--white);
+}
+
+.hero-image-wrapper {
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: 540px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.hero-image-card {
+    position: absolute;
+    left: -30px;
+    bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px 22px;
+
+    border-radius: var(--radius-md);
+
+    color: var(--black);
+    background: var(--white);
+
+    box-shadow: var(--shadow-md);
+}
+
+.hero-image-card strong {
+    margin-bottom: 3px;
+}
+
+.hero-image-card span {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 850px) {
+
+    .hero {
+        padding: 75px 0 90px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .hero-image {
+        height: 420px;
+    }
+
+    .hero-image-card {
+        left: 20px;
+    }
+}
