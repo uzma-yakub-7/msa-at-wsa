@@ -1,29 +1,21 @@
 {
-  "name": "wsa-msa-website",
+  "name": "msa-at-wsa",
   "version": "1.0.0",
-  "private": true,
-  "description": "Website for the Muslim Student Association at Westchester Square Academy",
-  "engines": {
-    "node": ">=20.0.0"
-  },
+  "description": "Official website for the Muslim Student Association at Westchester Square Academy (WSA MSA).",
+  "main": "backend/server.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start -p ${PORT:-3000}"
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
   },
+  "keywords": [
+    "msa",
+    "wsa",
+    "student-association",
+    "westchester-square-academy"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "next": "^16.3.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "@neondatabase/serverless": "^1.1.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@types/node": "^22.10.0",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "tailwindcss": "^4.3.3",
-    "@tailwindcss/postcss": "^4.3.3",
-    "postcss": "^8.4.49"
+    "express": "^4.21.2"
   }
 }
