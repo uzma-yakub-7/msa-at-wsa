@@ -1,0 +1,41 @@
+.welcome {
+    background: var(--white);
+}
+
+.what-we-do {
+    background: var(--off-white);
+}
+
+.activities {
+    background: var(--white);
+}
+
+.events-preview {
+    background: var(--off-white);
+}
+
+.mission-vision {
+    background: var(--white);
+}
+
+.leadership-preview {
+    background: var(--off-white);
+}
+
+.resources-preview {
+    background: var(--white);
+}
+
+.instagram-section {
+    background: var(--off-white);
+}
+
+.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 700px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
