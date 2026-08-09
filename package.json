@@ -1,0 +1,24 @@
+{
+  "name": "wsa-msa-website",
+  "version": "1.0.0",
+  "description": "Official website for the Muslim Student Association at Westchester Square Academy (WSA MSA).",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
+  "keywords": [
+    "wsa",
+    "msa",
+    "student-association",
+    "westchester-square-academy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}
