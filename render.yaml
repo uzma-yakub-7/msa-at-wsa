@@ -1,26 +1,9 @@
-# Render Blueprint — lets you deploy this whole service in one step:
-# Render dashboard -> New -> Blueprint -> pick this repo -> Render reads
-# this file and creates the web service automatically. You'll be prompted
-# in the dashboard for the three secret values below (DATABASE_URL,
-# ADMIN_USER, ADMIN_PASSWORD) rather than typing them into this file, so
-# nothing secret ever gets committed to GitHub.
-#
-# You don't have to use this file — you can also create the Web Service by
-# hand in the Render dashboard using the same build/start commands below.
-# See README.md, section "Deploying on Render".
-
 services:
   - type: web
     runtime: node
-    name: wsa-msa-website
+    name: msa-at-wsa
     plan: free
     branch: main
-    buildCommand: npm install && npm run build
-    startCommand: npm run start
-    envVars:
-      - key: DATABASE_URL
-        sync: false
-      - key: ADMIN_USER
-        sync: false
-      - key: ADMIN_PASSWORD
-        sync: false
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
