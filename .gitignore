@@ -1,30 +1,45 @@
-# dependencies
-/node_modules
+# Node.js dependencies
+node_modules/
 
-# next.js
-/.next/
-/out/
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
 
-# production
-/build
+# Render
+.render/
 
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files (never commit real secrets)
-.env
-.env.local
-.env*.local
+# OS files
+.DS_Store
+Thumbs.db
 
-# typescript
+# Editor files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Runtime files
+*.log
+
+# Database local files
+*.sqlite
+*.sqlite3
+
+# Build / deployment output
+dist/
+build/
+
+# TypeScript / Next.js - not used
+*.ts
+*.tsx
 *.tsbuildinfo
-next-env.d.ts
-
-# vercel
-.vercel
+.next/
+out/
