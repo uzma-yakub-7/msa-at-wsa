@@ -1,0 +1,95 @@
+.leadership-page {
+    background: var(--off-white);
+}
+
+.leadership-intro {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.leadership-grid {
+    width: min(100%, var(--max-width));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.leadership-card {
+    overflow: hidden;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+
+    text-align: center;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.leadership-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.leadership-photo {
+    min-height: 250px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--light-gray);
+    color: var(--maroon);
+
+    font-weight: 700;
+}
+
+.leadership-info {
+    padding: 25px;
+}
+
+.leadership-info h3 {
+    margin-bottom: 5px;
+    color: var(--maroon);
+}
+
+.leadership-position {
+    margin-bottom: 12px;
+
+    color: var(--maroon-light);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.leadership-bio {
+    margin-bottom: 0;
+    color: var(--gray);
+}
+
+.faculty-advisor {
+    margin-top: 60px;
+}
+
+.faculty-advisor .leadership-grid {
+    grid-template-columns: minmax(250px, 420px);
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .leadership-grid,
+    .faculty-advisor .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+}
