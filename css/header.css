@@ -1,28 +1,32 @@
 /* ============================================================
-   HEADER / NAVBAR
+   MSA AT WSA — HEADER / NAVBAR
    ============================================================ */
 
-.site-header {
+/* Main header */
+
+#site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
 
     width: 100%;
 
-    background: var(--white);
+    background: #ffffff;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid #e9e1e2;
 
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 
-/* ============================================================
-   NAVBAR CONTAINER
-   ============================================================ */
+/* Navbar wrapper */
 
-.navbar {
+#site-header .navbar {
+    width: min(1180px, calc(100% - 40px));
+
     min-height: 76px;
+
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
@@ -36,64 +40,92 @@
    BRAND
    ============================================================ */
 
-.nav-brand {
-    display: inline-flex;
+#site-header .nav-brand {
+    display: flex;
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    color: var(--maroon);
+    color: #6b0f1a;
 
-    font-weight: 700;
+    text-decoration: none;
 
     flex-shrink: 0;
 }
 
 
-.nav-brand:hover,
-.nav-brand:focus-visible {
-    color: var(--maroon-dark);
+#site-header .nav-brand:hover {
+    color: #500b13;
 }
 
 
-.nav-brand-mark {
+/* MSA circle / logo placeholder */
+
+#site-header .nav-brand-mark {
     width: 44px;
     height: 44px;
 
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    border: 2px solid var(--maroon);
+    border: 2px solid #6b0f1a;
 
     border-radius: 50%;
 
-    color: var(--maroon);
+    color: #6b0f1a;
 
-    font-size: 0.75rem;
+    font-size: 11px;
     font-weight: 800;
 
-    line-height: 1;
+    letter-spacing: 0.5px;
 }
 
 
-.nav-brand-text {
-    max-width: 260px;
+/* Brand text */
 
-    font-size: 0.9rem;
+#site-header .nav-brand-text {
+    display: flex;
+    flex-direction: column;
 
-    line-height: 1.25;
+    line-height: 1.2;
+}
+
+
+#site-header .nav-brand-text strong {
+    color: #6b0f1a;
+
+    font-size: 18px;
+    font-weight: 750;
+}
+
+
+#site-header .nav-brand-text small {
+    margin-top: 3px;
+
+    color: #777777;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
 }
 
 
 /* ============================================================
-   MAIN NAVIGATION
+   NAVIGATION
    ============================================================ */
 
-.nav-links {
+#site-header .site-navigation {
+    margin-left: auto;
+}
+
+
+#site-header .nav-links {
     display: flex;
     align-items: center;
 
-    gap: 26px;
+    gap: 24px;
 
     margin: 0;
     padding: 0;
@@ -102,13 +134,13 @@
 }
 
 
-.nav-links li {
+#site-header .nav-links li {
     margin: 0;
     padding: 0;
 }
 
 
-.nav-links a {
+#site-header .nav-links a {
     position: relative;
 
     display: inline-flex;
@@ -116,32 +148,32 @@
 
     min-height: 44px;
 
-    color: var(--dark);
+    padding: 4px 0;
 
-    font-size: 0.9rem;
+    color: #292929;
+
+    text-decoration: none;
+
+    font-size: 14px;
     font-weight: 600;
 
+    white-space: nowrap;
+
     transition:
-        color var(--transition);
+        color 0.2s ease;
 }
 
 
-.nav-links a:hover,
-.nav-links a:focus-visible {
-    color: var(--maroon);
+/* Hover */
+
+#site-header .nav-links a:hover {
+    color: #6b0f1a;
 }
 
 
-/* ============================================================
-   ACTIVE NAVIGATION LINK
-   ============================================================ */
+/* Animated underline */
 
-.nav-links a.active {
-    color: var(--maroon);
-}
-
-
-.nav-links a::after {
+#site-header .nav-links a::after {
     content: "";
 
     position: absolute;
@@ -152,25 +184,39 @@
     width: 0;
     height: 2px;
 
-    background: var(--maroon);
+    background: #6b0f1a;
+
+    border-radius: 2px;
 
     transition:
-        width var(--transition);
+        width 0.2s ease;
 }
 
 
-.nav-links a:hover::after,
-.nav-links a:focus-visible::after,
-.nav-links a.active::after {
+#site-header .nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* Active page */
+
+#site-header .nav-links a.active {
+    color: #6b0f1a;
+
+    font-weight: 700;
+}
+
+
+#site-header .nav-links a.active::after {
     width: 100%;
 }
 
 
 /* ============================================================
-   NAVIGATION ACTIONS
+   JOIN MSA BUTTON
    ============================================================ */
 
-.nav-actions {
+#site-header .nav-actions {
     display: flex;
     align-items: center;
 
@@ -180,7 +226,7 @@
 }
 
 
-.nav-join {
+#site-header .nav-join {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -189,31 +235,40 @@
 
     padding: 9px 18px;
 
-    background: var(--maroon);
+    background: #6b0f1a;
 
-    color: var(--white);
+    border: 1px solid #6b0f1a;
 
     border-radius: 999px;
 
-    font-size: 0.84rem;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
     font-weight: 700;
 
+    white-space: nowrap;
+
     transition:
-        background var(--transition),
-        transform var(--transition),
-        box-shadow var(--transition);
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
-.nav-join:hover,
-.nav-join:focus-visible {
-    background: var(--maroon-dark);
+#site-header .nav-join:hover {
+    background: #500b13;
 
-    color: var(--white);
+    border-color: #500b13;
 
-    transform: translateY(-2px);
+    color: #ffffff;
 
-    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px rgba(107, 15, 26, 0.22);
 }
 
 
@@ -221,33 +276,32 @@
    MOBILE MENU BUTTON
    ============================================================ */
 
-.nav-toggle {
+#site-header .nav-toggle {
     display: none;
 
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
 
     padding: 0;
 
-    background: transparent;
+    background: #ffffff;
 
-    border: 1px solid var(--border);
+    border: 1px solid #ded4d6;
 
-    border-radius: var(--radius-sm);
+    border-radius: 9px;
 
-    color: var(--maroon);
+    cursor: pointer;
 }
 
 
-.nav-toggle:hover,
-.nav-toggle:focus-visible {
-    background: var(--off-white);
+#site-header .nav-toggle:hover {
+    border-color: #6b0f1a;
 
-    border-color: var(--maroon);
+    background: #faf6f7;
 }
 
 
-.nav-toggle span {
+#site-header .nav-toggle span {
     display: block;
 
     width: 20px;
@@ -255,20 +309,9 @@
 
     margin: 4px auto;
 
-    background: currentColor;
+    background: #6b0f1a;
 
-    transition:
-        transform var(--transition),
-        opacity var(--transition);
-}
-
-
-/* ============================================================
-   MOBILE MENU OPEN STATE
-   ============================================================ */
-
-.nav-links.is-open {
-    display: flex;
+    border-radius: 2px;
 }
 
 
@@ -276,27 +319,25 @@
    TABLET
    ============================================================ */
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
 
-    .navbar {
+    #site-header .navbar {
         gap: 18px;
     }
 
 
-    .nav-links {
-        gap: 17px;
+    #site-header .nav-links {
+        gap: 15px;
     }
 
 
-    .nav-links a {
-        font-size: 0.84rem;
+    #site-header .nav-links a {
+        font-size: 13px;
     }
 
 
-    .nav-brand-text {
-        max-width: 210px;
-
-        font-size: 0.82rem;
+    #site-header .nav-brand-text small {
+        display: none;
     }
 
 }
@@ -306,19 +347,16 @@
    MOBILE
    ============================================================ */
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
 
-    .navbar {
+    #site-header .navbar {
         min-height: 68px;
+
+        width: min(100% - 30px, 700px);
     }
 
 
-    .nav-toggle {
-        display: block;
-    }
-
-
-    .nav-links {
+    #site-header .site-navigation {
         position: absolute;
 
         top: 68px;
@@ -327,71 +365,76 @@
 
         display: none;
 
+        width: 100%;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid #e9e1e2;
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+
+    #site-header .site-navigation.is-open {
+        display: block;
+    }
+
+
+    #site-header .nav-links {
+        width: min(100% - 30px, 700px);
+
+        margin: 0 auto;
+
+        padding: 10px 0 15px;
+
+        display: flex;
         flex-direction: column;
         align-items: stretch;
 
         gap: 0;
-
-        padding: 10px 20px 20px;
-
-        background: var(--white);
-
-        border-bottom: 1px solid var(--border);
-
-        box-shadow: var(--shadow-md);
     }
 
 
-    .nav-links.is-open {
-        display: flex;
-    }
-
-
-    .nav-links li {
+    #site-header .nav-links li {
         width: 100%;
     }
 
 
-    .nav-links a {
-        display: flex;
-
+    #site-header .nav-links a {
         width: 100%;
 
-        min-height: 48px;
+        min-height: 46px;
 
-        padding: 12px 5px;
+        padding: 12px 8px;
 
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid #f0eaeb;
 
-        font-size: 0.9rem;
+        font-size: 15px;
     }
 
 
-    .nav-links a::after {
+    #site-header .nav-links a::after {
         display: none;
     }
 
 
-    .nav-links a.active {
-        color: var(--maroon);
+    #site-header .nav-links a.active {
+        padding-left: 14px;
 
-        padding-left: 10px;
+        border-left: 3px solid #6b0f1a;
 
-        border-left: 3px solid var(--maroon);
+        border-bottom-color: #f0eaeb;
     }
 
 
-    .nav-actions {
-        margin-left: auto;
+    #site-header .nav-toggle {
+        display: block;
     }
 
 
-    .nav-join {
-        min-height: 40px;
-
-        padding: 8px 15px;
-
-        font-size: 0.8rem;
+    #site-header .nav-join {
+        display: none;
     }
 
 }
@@ -401,36 +444,23 @@
    SMALL MOBILE
    ============================================================ */
 
-@media (max-width: 520px) {
+@media (max-width: 500px) {
 
-    .nav-brand-mark {
-        width: 38px;
-        height: 38px;
-
-        font-size: 0.68rem;
+    #site-header .navbar {
+        width: calc(100% - 24px);
     }
 
 
-    .nav-brand-text {
-        max-width: 160px;
-
-        font-size: 0.75rem;
-    }
-
-
-    .nav-actions {
-        gap: 6px;
-    }
-
-
-    .nav-join {
-        display: none;
-    }
-
-
-    .nav-toggle {
+    #site-header .nav-brand-mark {
         width: 40px;
         height: 40px;
+
+        font-size: 10px;
+    }
+
+
+    #site-header .nav-brand-text strong {
+        font-size: 16px;
     }
 
 }
@@ -440,12 +470,9 @@
    ACCESSIBILITY
    ============================================================ */
 
-.nav-brand:focus-visible,
-.nav-links a:focus-visible,
-.nav-join:focus-visible,
-.nav-toggle:focus-visible {
-    outline: 3px solid
-        rgba(107, 15, 26, 0.25);
+#site-header a:focus-visible,
+#site-header button:focus-visible {
+    outline: 3px solid rgba(107, 15, 26, 0.25);
 
     outline-offset: 3px;
 }
